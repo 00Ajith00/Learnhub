@@ -1,0 +1,65 @@
+body {
+    background-color: #121212; /* Dark night background */
+    color: gold; /* Gold font color */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #1e1e1e; /* Dark container background */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Gold glow effect */
+}
+
+h1, h2 {
+    color: gold;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid gold;
+    border-radius: 5px;
+    background: #2a2a2a; /* Dark input background */
+    color: gold;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: gold;
+    color: #121212; /* Dark night font color */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d4af37; /* Brighter gold on hover */
+}
+
+.user-list {
+    margin-top: 20px;
+    padding: 10px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+#usersContainer {
+    text-align: left;
+    padding: 10px;
+    color: gold;
+}

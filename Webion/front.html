@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnHub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background-image:url("bg.png");
+      background-size: cover;
+      background-position: center; 
+      background-repeat: no-repeat;
+      height: 100vh; 
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #111;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #ffcc00;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero {
+      background-color: #111;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .partners {
+      background-color: #222;
+    }
+
+    .partners h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .partners .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .partners .logos img {
+      height: 50px;
+    }
+
+    .stats {
+      background-color: #111;
+    }
+
+    .stats h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .stats p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .stats .data {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 1.2rem;
+    }
+
+    .stats .data div {
+      padding: 10px 20px;
+      background-color: #222;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>LearnHub</h1>
+    <a href="index.html">Admin</a>
+  </header>
+
+  <section class="hero">
+    <h2>Learn from the best, be your best..</h2>
+    <p>Give yourself an upgrade with our inspiring online courses and join a global community of learners</p>
+    <button>Get Started</button>
+  </section>
+
+  <section class="partners">
+    <h2>Our Placement Partners</h2>
+    <div class="logos">
+      <img src="C:\Users\Lokeshwar\OneDrive\Desktop\webion\assets\img\airbnb.png" alt="Airbnb">
+      <img src="assets\logo\client-8.png" alt="Grabyo">
+      <img src="assets\logo\Lifegroups.png" alt="LifeGroups">
+      <img src="assets\logo\myob.png" alt="MYOB">
+      <img src="assets\img\tailus.png"alt="Tailus">
+      <img src="assets/img/microsoft.png" alt="Microsoft">
+      <img src="assets\img\coty.png" alt="COTY">
+      <img src="assets\logo\lilly.png" alt="Lilly">
+    </div>
+  </section>
+
+  <section class="stats">
+    <h2>Empower your future with cutting-edge skills</h2>
+    <p>Join our course with a proven track record of success, where learning isn’t just about gaining skills; it’s about growing them.</p>
+    <div class="data">
+      <div>Total Students: 0</div>
+      <div>Placed Students: 0</div>
+      <div>Unplaced Students: o</div>
+    </div>
+  </section>
+
+  <footer>
+  </footer>
+<script>
+    function updateStatsPage() {
+        let totalStudents = localStorage.getItem("totalStudents") || 0;
+        let placedStudents = localStorage.getItem("placedStudents") || 0;
+        let unplacedStudents = localStorage.getItem("unplacedStudents") || 0;
+
+        document.querySelector(".stats .data div:nth-child(1)").innerText = `Total Students: ${totalStudents}`;
+        document.querySelector(".stats .data div:nth-child(2)").innerText = `Placed Students: ${placedStudents}`;
+        document.querySelector(".stats .data div:nth-child(3)").innerText = `Unplaced Students: ${unplacedStudents}`;
+    }
+
+    // Check if the stats need to be updated
+    if (localStorage.getItem("updateStats") === "true") {
+        updateStatsPage();
+        localStorage.removeItem("updateStats"); // Reset update flag
+    }
+
+    // Run on page load
+    window.onload = updateStatsPage;
+</script>
+
+</body>
+</html>
